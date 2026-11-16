@@ -121,7 +121,7 @@ ul,ol{padding:0;list-style:none}
 
 /* hero */
 .hero{position:relative;height:100vh;height:100svh;min-height:700px;padding:clamp(92px,12vh,124px) var(--gut) 0;display:flex;flex-direction:column}
-.hero-grid{position:relative;z-index:3;width:min(100%,var(--max));margin-inline:auto;flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;padding-bottom:calc(min(15vw,260px) * .74)}
+.hero-grid{position:relative;z-index:3;width:min(100%,var(--max));margin-inline:auto;flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;padding-bottom:96px}
 .hero-copy{display:grid;gap:26px;max-width:660px}
 .eyebrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;font:500 14px/1.5 var(--body);color:var(--ink-2)}
 .open-chip{display:inline-flex;align-items:center;gap:9px;padding:8px 15px;border-radius:999px;border:1px solid var(--line-l);background:rgba(246,243,238,.7);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-weight:600;color:var(--ink)}
@@ -141,11 +141,13 @@ ul,ol{padding:0;list-style:none}
 .ready .drag-hint{opacity:1}
 .drag-hint svg{width:16px;height:16px}
 .no-gl .drag-hint{display:none}
-.mark{position:absolute;z-index:1;inset-inline:0;bottom:clamp(6px,1.4vw,22px);text-align:center;direction:ltr;font:500 min(15vw,260px)/.8 var(--word);letter-spacing:.04em;background:linear-gradient(180deg,#D6B77F 0%,#A98143 55%,#8C6A37 100%);-webkit-background-clip:text;background-clip:text;color:transparent;pointer-events:none;user-select:none;white-space:nowrap}
-.mark span{display:inline-block;opacity:0;transform:translateY(40%);transition:opacity 1.2s var(--ease),transform 1.4s var(--ease)}
-.ready .mark span{opacity:1;transform:none}
-.mark span:nth-child(2){transition-delay:.06s}.mark span:nth-child(3){transition-delay:.12s}.mark span:nth-child(4){transition-delay:.18s}.mark span:nth-child(5){transition-delay:.24s}.mark span:nth-child(6){transition-delay:.3s}
-.cue{position:absolute;z-index:3;inset-inline-start:var(--gut);bottom:calc(min(15vw,260px) * .9);width:1px;height:46px;background:linear-gradient(var(--ink-2),transparent);transform-origin:top;animation:cue 2.6s var(--ease) infinite}
+.sig{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2vw,26px);direction:ltr;font:500 clamp(13px,1.05vw,16px)/1 var(--body);letter-spacing:.42em;color:#86652F;white-space:nowrap;user-select:none;pointer-events:none}
+.sig span{margin-right:-.42em}
+.sig::before,.sig::after{content:"";flex:none;width:min(16vw,200px);height:1px;background:linear-gradient(90deg,transparent,rgba(140,106,55,.85))}
+.sig::after{transform:scaleX(-1)}
+.mark{position:absolute;z-index:1;inset-inline:0;bottom:clamp(30px,4.5vh,44px);opacity:0;transform:translateY(10px);transition:opacity 1.2s .5s var(--ease),transform 1.4s .5s var(--ease)}
+.ready .mark{opacity:1;transform:none}
+.cue{position:absolute;z-index:3;inset-inline-start:var(--gut);bottom:104px;width:1px;height:46px;background:linear-gradient(var(--ink-2),transparent);transform-origin:top;animation:cue 2.6s var(--ease) infinite}
 @keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
 /* doctors */
@@ -196,6 +198,9 @@ ul,ol{padding:0;list-style:none}
 .case.pair{width:340px}
 .case.pair .ph+.ph{border-top:1px solid rgba(255,255,255,.18)}
 .case.single{width:300px}
+.case.inset{width:400px}
+.case.inset img{object-position:100% 100%}
+.tag.tag-in{top:auto;bottom:12px;inset-inline-start:calc(38% + 8px)}
 .tag{position:absolute;top:12px;inset-inline-start:12px;padding:6px 12px;border-radius:999px;font:600 12px/1 var(--body);background:rgba(18,20,23,.6);color:#fff;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18)}
 .tag.after{background:rgba(226,200,148,.92);color:var(--ink);border-color:transparent}
 .case figcaption{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px;color:var(--on-night-2);border-top:1px solid var(--line-d)}
@@ -321,7 +326,8 @@ ul,ol{padding:0;list-style:none}
 .foot-links a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line-d);text-decoration:none;font-size:14px;transition:background .3s}
 .foot-links a:hover{background:rgba(255,255,255,.07)}
 .foot-links svg{width:18px;height:18px}
-.foot-word{direction:ltr;text-align:center;font:500 min(19vw,330px)/.8 var(--word);letter-spacing:.04em;margin:clamp(40px,6vw,80px) 0 clamp(20px,3vw,36px);background:linear-gradient(180deg,#E2C894,#8C6A37);-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none}
+.foot-word{margin:clamp(48px,6vw,80px) 0 clamp(28px,3vw,40px);color:#D6BC8C}
+.foot-word::before,.foot-word::after{background:linear-gradient(90deg,transparent,rgba(214,188,140,.75))}
 .foot-base{width:min(100%,var(--max));margin-inline:auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:13px;color:var(--on-night-2);border-top:1px solid var(--line-d);padding-top:20px}
 
 /* floating whatsapp */
@@ -343,8 +349,10 @@ ul,ol{padding:0;list-style:none}
 }
 @media (max-width:820px){
   .hero{padding-top:96px;height:auto;min-height:100svh}
-  .hero-grid{align-items:center;padding-bottom:calc(19vw * 1.1)}
-  .mark{font-size:19vw}
+  .hero-grid{align-items:center;padding-bottom:84px}
+  .sig{font-size:12px;letter-spacing:.32em;gap:12px}
+  .sig span{margin-right:-.32em}
+  .sig::before,.sig::after{width:min(12vw,56px)}
   .cue{display:none}
   .facts{grid-template-columns:repeat(3,minmax(0,1fr))}
   .facts li{padding-inline-end:12px;margin-inline-end:12px;font-size:13px}
@@ -378,6 +386,7 @@ ul,ol{padding:0;list-style:none}
   .case{height:400px}
   .case.pair{width:280px}
   .case.single{width:250px}
+  .case.inset{width:340px}
   .rbtn{flex:1 1 240px}
   .fab span.lbl{display:none}
   .fab{padding:0 8px}
@@ -465,7 +474,7 @@ ul,ol{padding:0;list-style:none}
       </ul>
     </div>
   </div>
-  <p class="mark" aria-hidden="true"><span>K</span><span>A</span><span>M</span><span>Y</span><span>A</span><span>R</span></p>
+  <p class="mark sig" aria-hidden="true"><span>KAMYAR · DENTAL CLINIC</span></p>
   <span class="cue" aria-hidden="true"></span>
 </section>
 
@@ -694,7 +703,7 @@ ul,ol{padding:0;list-style:none}
       <a data-wa href="https://wa.me/989303347634"><svg><use href="#i-wa"/></svg>واتس‌اپ</a>
     </div>
   </div>
-  <p class="foot-word" aria-hidden="true">KAMYAR</p>
+  <p class="foot-word sig" aria-hidden="true"><span>KAMYAR · DENTAL CLINIC</span></p>
   <div class="foot-base"><span>© ۱۴۰۵ کلینیک دندانپزشکی کامیار</span><span>تهران، شهرک شریعتی</span></div>
 </footer>
 
@@ -773,12 +782,21 @@ ul,ol{padding:0;list-style:none}
 
   /* before / after marquee (real clinic photos only) */
   const CASES = [
+    { type: 'pair', b: 'img/ba2-before.webp', a: 'img/ba2-after.webp', t: 'کامپوزیت دو فک', s: 'رنگ و فرم به انتخاب بیمار' },
+    { type: 'inset', a: 'img/case-gap.webp', t: 'بستن فاصلهٔ دندان‌ها', s: 'کامپوزیت' },
     { type: 'pair', b: 'img/ba1-before.webp', a: 'img/ba1-after.webp', t: 'روکش دندان', s: 'دندان‌های ساییده' },
+    { type: 'pair', b: 'img/ba6-before.webp', a: 'img/ba6-after.webp', t: 'کامپوزیت طرح لمینت', s: 'لبخند یکدست' },
     { type: 'single', a: 'img/case13.webp', t: 'لبخند تازه', s: 'بعد از درمان' },
+    { type: 'pair', b: 'img/ba3-before.webp', a: 'img/ba3-after.webp', t: 'روکش زیرکونیا', s: 'شش واحد' },
+    { type: 'inset', a: 'img/case-upper.webp', t: 'کامپوزیت فک بالا', s: 'فرم و رنگ تازه' },
+    { type: 'pair', b: 'img/ba4-before.webp', a: 'img/ba4-after.webp', t: 'کامپوزیت ترمیمی', s: 'دندان‌های شکسته' },
+    { type: 'pair', b: 'img/ba5-before.webp', a: 'img/ba5-after.webp', t: 'زیبایی لبخند', s: 'قبل و بعد از درمان' },
     { type: 'single', a: 'img/case14.webp', t: 'فرم و رنگ یکدست', s: 'بعد از درمان' }
   ];
   const card = c => c.type === 'pair'
     ? `<figure class="case pair"><div class="ph"><img src="${c.b}" alt="${c.t}، قبل از درمان" loading="lazy"><span class="tag">قبل</span></div><div class="ph"><img src="${c.a}" alt="${c.t}، بعد از درمان" loading="lazy"><span class="tag after">بعد</span></div><figcaption><b>${c.t}</b><span>${c.s}</span></figcaption></figure>`
+    : c.type === 'inset'
+    ? `<figure class="case inset"><div class="ph"><img src="${c.a}" alt="${c.t}، بعد از درمان، عکس قبل در گوشه" loading="lazy"><span class="tag after">بعد</span><span class="tag tag-in">قبل</span></div><figcaption><b>${c.t}</b><span>${c.s}</span></figcaption></figure>`
     : `<figure class="case single"><div class="ph"><img src="${c.a}" alt="${c.t}، ${c.s}" loading="lazy"><span class="tag after">بعد</span></div><figcaption><b>${c.t}</b><span>${c.s}</span></figcaption></figure>`;
   const mq = $('#mq');
   let set = CASES.map(card).join('');
