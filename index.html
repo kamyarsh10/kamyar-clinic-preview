@@ -12,6 +12,8 @@
 <meta property="og:description" content="لبخندی ماندگار با اطمینان کامل. ایمپلنت، روکش، کامپوزیت و دندانپزشکی کودکان در شهرک شریعتی تهران.">
 <meta property="og:image" content="img/imp-render.webp">
 <meta property="og:locale" content="fa_IR">
+<link rel="alternate" hreflang="fa" href="index.html">
+<link rel="alternate" hreflang="en" href="en.html">
 <link rel="icon" href="img/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -108,6 +110,9 @@ ul,ol{padding:0;list-style:none}
 .top nav a{font:500 15px/1 var(--body);text-decoration:none;padding:13px 14px;border-radius:999px;color:var(--ink-2);transition:background .3s,color .3s}
 .top nav a:hover{background:rgba(27,24,21,.06);color:var(--ink)}
 .top .btn{min-height:46px;padding:0 20px;font-size:15px}
+.lang{display:inline-grid;place-items:center;min-width:48px;height:46px;padding:0 14px;border-radius:999px;border:1px solid var(--line-l);font:600 14px/1 var(--body);letter-spacing:.06em;text-decoration:none;color:var(--ink);background:rgba(246,243,238,.5);transition:background .3s,border-color .3s}
+.lang:hover{background:rgba(27,24,21,.06);border-color:rgba(27,24,21,.3)}
+.sheet .lang{align-self:flex-start;margin-top:14px;font-size:16px;font-family:var(--body)}
 .menu-b{display:none;width:48px;height:48px;border-radius:50%;border:1px solid var(--line-l);place-items:center;margin-inline-start:auto;background:rgba(246,243,238,.6)}
 .menu-b span,.menu-b span::before{display:block;width:18px;height:1.6px;background:var(--ink);position:relative;transition:transform .4s var(--ease)}
 .menu-b span{transform:translateY(-3px)}
@@ -340,7 +345,8 @@ ul,ol{padding:0;list-style:none}
 @media (max-width:1080px){
   .top nav{display:none}
   .top>.btn{display:none}
-  .menu-b{display:grid}
+  .menu-b{display:grid;margin-inline-start:0}
+  .top>.lang{margin-inline-start:auto;margin-inline-end:-12px}
   .docs-grid,.calm-grid,.panel{grid-template-columns:1fr}
   .docs-head{position:static}
   .reach{grid-template-columns:1fr}
@@ -442,6 +448,7 @@ ul,ol{padding:0;list-style:none}
     <a href="#visit">تماس</a>
   </nav>
   <a class="btn btn-k" data-wa href="https://wa.me/989303347634"><span class="wa-dot"><svg><use href="#i-wa"/></svg></span>نوبت در واتس‌اپ</a>
+  <a class="lang" href="en.html" hreflang="en" lang="en" aria-label="English version">EN</a>
   <button class="menu-b" id="menuB" aria-label="باز کردن منو" aria-expanded="false" aria-controls="sheet"><span></span></button>
 </header>
 <div class="sheet" id="sheet">
@@ -452,6 +459,7 @@ ul,ol{padding:0;list-style:none}
   <a href="#instagram">اینستاگرام</a>
   <a href="#visit">تماس</a>
   <a class="btn btn-k" data-wa href="https://wa.me/989303347634"><span class="wa-dot"><svg><use href="#i-wa"/></svg></span>نوبت در واتس‌اپ</a>
+  <a class="lang" href="en.html" hreflang="en" lang="en">English</a>
 </div>
 
 <main id="main">
